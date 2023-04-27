@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// TestNew tests storageid.New with valid inputs.
 func TestNew(t *testing.T) {
 	tests := map[string]struct {
 		prefix string
@@ -32,6 +33,7 @@ func TestNew(t *testing.T) {
 	}
 }
 
+// TestNewErrors tests storageid.New with invalid inputs where errors are expected.
 func TestNewErrors(t *testing.T) {
 	tests := map[string]struct {
 		prefix string
