@@ -3,26 +3,19 @@
 Generates a valid "ID" for Azure Storage Accounts. A valid Azure Storage Account identifier:
 
 * Is a maximum of 24 characters.
-* Consists of lowercase alpha an numeric characters.
+* Consists of lowercase alpha or numeric characters.
 
-## Usage
-Use the following commands to test and build the storageid executable. The executable is created in the `target` directory.
+I use this project a bit in my day to day job, and am evolving it as I learn more about Rust using the 
+[Interactive Book](https://rust-book.cs.brown.edu/).
 
-```
-make test
-make build
-cd target
-```
+## Quickstart
 
-To run the executable provide a storage account "prefix" and optionally, the desired length of the id. The length defaults to 24 if not provided.
-
-```
-% ./storageid intenv
-2023/04/27 11:45:23 main: generated storageid intenvd75oh47pnxuqsvdl9u
-```
-
-If the prefix violates the Azure naming convention, an error is returned
-```
-% ./storageid Intenv
-2023/04/27 11:46:36 main: an error occurred storageid.New: invalid prefix Intenv
+```shell
+storageid % cargo run
+   Compiling storageid v0.1.0 (/Users/dwhitmire/code/storageid)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.16s
+     Running `target/debug/storageid`
+Please enter a storage account prefix or hit enter for None
+int
+New ID = intWWInIkeTQbBrlab179NC3
 ```
