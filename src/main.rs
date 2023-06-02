@@ -9,12 +9,12 @@ const MAX_ID_LENGTH: usize = 24;
 /// An optional prefix may be provided for the id.
 fn create_id(prefix: &str, max_id_length: usize) -> Result<String, String> {
     let re = Regex::new(r"\w+").expect("string should be a valid regular expression");
-    
+
     let id_length = max_id_length - prefix.len();
     let id = prefix.to_string() + &Alphanumeric.sample_string(&mut rand::thread_rng(), id_length);
 
     if re.is_match(&id) {
-        return Ok(id)
+        return Ok(id);
     } else {
         return Err("Generated id is invalid".to_string());
     }
